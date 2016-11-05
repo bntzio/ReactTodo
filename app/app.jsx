@@ -5,6 +5,16 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 // Components
 var TodoApp = require('TodoApp');
 
+// Redux
+var actions = require('actions');
+var store = require('configureStore').configure();
+store.subscribe(() => {
+  console.log('New state', store.getState());
+});
+store.dispatch(actions.addTodo('Clean the yard'));
+store.dispatch(actions.setSearchText('yard'));
+store.dispatch(actions.toggleShowCompleted());
+
 // Load Foundation
 $(document).foundation();
 
