@@ -8,13 +8,13 @@ module.exports = {
     './app/app.jsx'
   ],
   externals: {
-    jquery: 'jQuery' 
+    jquery: 'jQuery'
   },
   plugins: [
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery'
-    }) 
+    })
   ],
   output: {
     path: __dirname,
@@ -28,7 +28,8 @@ module.exports = {
       './app/api'
     ],
     alias: {
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: 'app/styles/app.scss',
+      actions: 'app/actions/actions.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
